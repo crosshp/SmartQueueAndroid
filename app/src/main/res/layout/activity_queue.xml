@@ -1,38 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E3E3E1"
-    android:fitsSystemWindows="true"
-    tools:context=".QueueActivity">
+    android:background="#E3E3E1">
 
     <include
+        android:id="@+id/include"
+        layout="@layout/search_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/search_bar_layout"
-        android:id="@+id/include"
         android:layout_margin="5dp" />
-
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cardList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/include" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addQueueFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
         android:clickable="true"
-        app:layout_anchor="@id/cardList"
-        app:layout_anchorGravity="bottom|right|end" />
-</android.support.design.widget.CoordinatorLayout>
+        android:src="@drawable/ic_plus"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/include"
+        android:layout_alignEnd="@+id/include" />
+</RelativeLayout>
 
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartQueueAndroid</string>
+    <string name="app_name">SmartQueue</string>
     <string name="hint_name">Поиск очереди</string>
     <string name="count_people">Количество людей:</string>
     <string name="count_time">Оставшееся время:</string>
