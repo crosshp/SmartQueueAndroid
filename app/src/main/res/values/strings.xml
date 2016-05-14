@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SmartQueueAndroid</string>
+    <string name="hint_name">Поиск очереди...</string>
+</resources>
