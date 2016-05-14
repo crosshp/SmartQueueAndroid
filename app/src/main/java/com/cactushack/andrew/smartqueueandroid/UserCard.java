@@ -31,3 +31,22 @@ public class UserCard {
         this.dateLess = dateLess;
     }
 }
+/*
+*     <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="3"/>
+
+            <Button
+                android:id="@+id/connectButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/connect"
+                android:textColor="?attr/colorPrimary" />
+        </LinearLayout>*/

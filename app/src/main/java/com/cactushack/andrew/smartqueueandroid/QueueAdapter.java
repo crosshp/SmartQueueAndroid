@@ -71,7 +71,7 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.QueueViewHol
         personViewHolder.endInQueue.setText(String.valueOf(objectItem.getCountOfPerson()));
         personViewHolder.positionInQueue.setText(String.valueOf(objectItem.getPositionInQueue()));
         personViewHolder.timeLess.setText(objectItem.getDateLess());
-        personViewHolder.imageView.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.hospital));
+        personViewHolder.imageView.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.phoca));
         personViewHolder.deleteButton.setOnClickListener(new View.OnClickListener() {
 
             public void showAlert() {

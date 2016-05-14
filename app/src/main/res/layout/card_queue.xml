@@ -64,7 +64,7 @@
             <TextView
                 android:id="@+id/countPeopleValue"
                 android:layout_width="wrap_content"
-                android:textColor="#ED111C"
+                android:textColor="@color/colorPrimaryDark"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="7dp"
@@ -104,7 +104,7 @@
                 android:id="@+id/countTimeValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ED111C"
+                android:textColor="@color/colorPrimaryDark"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="7dp"
                 android:fontFamily="sans-serif-light"
