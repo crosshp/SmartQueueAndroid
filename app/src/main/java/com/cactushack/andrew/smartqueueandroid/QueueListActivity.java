@@ -43,6 +43,7 @@ public class QueueListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(RecyclerView recyclerView, View itemView, int position) {
                 Intent intentForNote = new Intent(activity, QueueActivity.class);
+                intentForNote.putExtra("name","Сети");
                 activity.startActivity(intentForNote);
             }
         });
