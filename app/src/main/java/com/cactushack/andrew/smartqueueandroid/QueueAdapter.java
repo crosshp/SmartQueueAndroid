@@ -76,8 +76,8 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.QueueViewHol
 
             public void showAlert() {
                 AlertDialog.Builder ad = new AlertDialog.Builder(personViewHolder.itemView.getContext());
-                ad.setTitle("Внимание");  // заголовок
-                ad.setMessage("Вы уверены, что хотите удалить"); // сообщение
+                ad.setTitle("Внимание!");  // заголовок
+                ad.setMessage("Вы уверены, что хотите удалить?"); // сообщение
                 ad.setPositiveButton("Удалить", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int arg1) {
                         int position = personViewHolder.getAdapterPosition();

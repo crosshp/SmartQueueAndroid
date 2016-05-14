@@ -6,6 +6,7 @@ package com.cactushack.andrew.smartqueueandroid;
 public class UserCard {
     private String name;
     private String dateLess;
+    private int photo;
 
     public UserCard() {
     }
@@ -13,6 +14,20 @@ public class UserCard {
     public UserCard(String name, String dateLess) {
         this.name = name;
         this.dateLess = dateLess;
+    }
+
+    public UserCard(String name, String dateLess, int photo) {
+        this.name = name;
+        this.dateLess = dateLess;
+        this.photo = photo;
+    }
+
+    public int getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(int photo) {
+        this.photo = photo;
     }
 
     public String getName() {

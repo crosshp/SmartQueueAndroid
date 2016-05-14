@@ -29,15 +29,16 @@ public class UserAdapter extends BaseAdapter {
     private List<UserCard> userCards = null;
     private Context context = null;
     private Activity parentActivity;
+    private int myPosition = 0;
+    BaseAdapter adapter = this;
 
-    public UserAdapter(List<UserCard> userCards, Context context, Activity activity) {
+    public UserAdapter(List<UserCard> userCards, Context context, Activity activity, int myPosition) {
         this.userCards = userCards;
         this.context = context;
         this.parentActivity = activity;
+        this.myPosition = myPosition;
     }
-    private int [] photos = {R.drawable.semenuk,
-            R.drawable.ignatenko,R.drawable.philimonchyk,R.drawable.pavlenko,
-            R.drawable.sytnik,R.drawable.mazur,R.drawable.yarema,R.drawable.tatus};
+
 
     @Override
     public int getCount() {
@@ -55,20 +56,26 @@ public class UserAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         // задаем вид элемента списка, который мы создали высше
         View view = inflater.inflate(R.layout.user_card, parent, false);
+
+        if(myPosition<=1){
+
+        }
+        if (position == myPosition)
+            view.setBackgroundColor(parentActivity.getResources().getColor(R.color.colorAccentTransparent));
         TextView nameUser = (TextView) view.findViewById(R.id.valueName);
         nameUser.setText(userCards.get(position).getName());
         TextView positionValue = (TextView) view.findViewById(R.id.valuePosition);
-        positionValue.setText(String.valueOf(position+1));
+        positionValue.setText(String.valueOf(position + 1));
         TextView dateLess = (TextView) view.findViewById(R.id.valueDateLess);
-        dateLess.setText(String.valueOf(userCards.get(position).getDateLess()));
-        ImageView userImage = (ImageView) view.findViewById(R.id.userImage);
-        Bitmap bitmapFactory = BitmapFactory.decodeResource(parentActivity.getResources(),photos[position]);
+        dateLess.setText(4 + position * 4 + "мин.");
+        final ImageView userImage = (ImageView) view.findViewById(R.id.userImage);
+        Bitmap bitmapFactory = BitmapFactory.decodeResource(parentActivity.getResources(), userCards.get(position).getPhoto());
         bitmapFactory = Bitmap.createScaledBitmap(bitmapFactory, 64, 64, false);
-        userImage.setImageBitmap(getRoundedCornerBitmap(bitmapFactory,64));
+        userImage.setImageBitmap(getRoundedCornerBitmap(bitmapFactory, 64));
         ImageButton button = (ImageButton) view.findViewById(R.id.connectButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +87,12 @@ public class UserAdapter extends BaseAdapter {
                 builder.setPositiveButton("Попросить", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        UserCard me = userCards.remove(myPosition);
+                        UserCard removeCard = userCards.remove(position);
+                        userCards.add(position, me);
+                        userCards.add(position + 1, removeCard);
+                        myPosition = position;
+                        adapter.notifyDataSetChanged();
                     }
                 });
                 builder.setNegativeButton("Отмена", null);
