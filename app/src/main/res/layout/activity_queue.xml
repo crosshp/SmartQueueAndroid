@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
+    android:background="#E3E3E1"
     android:fitsSystemWindows="true"
     tools:context=".QueueActivity">
 
