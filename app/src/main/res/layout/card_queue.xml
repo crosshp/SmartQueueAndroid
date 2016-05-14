@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
             android:layout_below="@+id/imageQueue">
 
             <ImageView
@@ -63,6 +64,7 @@
             <TextView
                 android:id="@+id/countPeopleValue"
                 android:layout_width="wrap_content"
+                android:textColor="#ED111C"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="7dp"
@@ -102,6 +104,7 @@
                 android:id="@+id/countTimeValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#ED111C"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="7dp"
                 android:fontFamily="sans-serif-light"
