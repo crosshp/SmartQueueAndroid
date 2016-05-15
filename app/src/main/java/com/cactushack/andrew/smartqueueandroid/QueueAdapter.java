@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,15 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.QueueViewHol
         }
     }
 
+    public void removeByName(String name) {
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i).getName().equals(name)) {
+                data.remove(data.get(i));
+                Log.e("Ololo", "removed!");
+            }
+        }
+    }
+
     public QueueAdapter(List<QueueCard> data, Context context) {
         this.data = data;
         this.context = context;
@@ -71,7 +81,7 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.QueueViewHol
         personViewHolder.endInQueue.setText(String.valueOf(objectItem.getCountOfPerson()));
         personViewHolder.positionInQueue.setText(String.valueOf(objectItem.getPositionInQueue()));
         personViewHolder.timeLess.setText(objectItem.getDateLess());
-        personViewHolder.imageView.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.phoca));
+        personViewHolder.imageView.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), objectItem.getImage()));
         personViewHolder.deleteButton.setOnClickListener(new View.OnClickListener() {
 
             public void showAlert() {
@@ -139,6 +149,7 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.QueueViewHol
             deleteButton = (ImageButton) itemView.findViewById(R.id.deleteButton);
             imageView = (ImageView) itemView.findViewById(R.id.imageQueue);
         }
+
     }
 
     @Override

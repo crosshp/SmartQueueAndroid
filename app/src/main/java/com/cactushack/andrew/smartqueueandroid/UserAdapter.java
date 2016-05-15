@@ -84,7 +84,7 @@ public class UserAdapter extends BaseAdapter {
             intent.putExtra("name", nameQueue);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 1, intent, 0);
             builder.setSmallIcon(R.drawable.ic_account_alert)
-                   // .setContentText("Ваша очередь подойдёт через " + myPosition * 4 + 4 + "мин." + "\n" + neighbour)
+                    // .setContentText("Ваша очередь подойдёт через " + myPosition * 4 + 4 + "мин." + "\n" + neighbour)
                     .setContentTitle("Очередь '" + nameQueue + "'")
                     .setContentIntent(pendingIntent)
                     .setStyle(new android.support.v4.app.NotificationCompat.BigTextStyle().bigText(neighbour + "\nВаша очередь подойдёт через " + (myPosition * 4 + 4) + "мин." + "\n"));

@@ -8,6 +8,15 @@ public class QueueCard {
     private long positionInQueue;
     private String name;
     private long countOfPerson;
+    private int image;
+
+    public QueueCard(String dateLess, long positionInQueue, String name, long countOfPerson, int image) {
+        this.dateLess = dateLess;
+        this.positionInQueue = positionInQueue;
+        this.name = name;
+        this.countOfPerson = countOfPerson;
+        this.image = image;
+    }
 
     public QueueCard() {
     }
@@ -17,6 +26,13 @@ public class QueueCard {
         this.positionInQueue = positionInQueue;
         this.name = name;
         this.countOfPerson = countOfPerson;
+    }
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
     public String getDateLess() {
