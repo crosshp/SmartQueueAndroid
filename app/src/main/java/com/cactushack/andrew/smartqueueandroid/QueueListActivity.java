@@ -2,6 +2,8 @@ package com.cactushack.andrew.smartqueueandroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -46,13 +48,15 @@ public class QueueListActivity extends AppCompatActivity {
         PrimaryDrawerItem item3 = new PrimaryDrawerItem().withName("Информация").withIcon(R.drawable.ic_information_outline);
         PrimaryDrawerItem item4 = new PrimaryDrawerItem().withName("Про приложение").withIcon(R.drawable.ic_help_circle);
         PrimaryDrawerItem item5 = new PrimaryDrawerItem().withName("Выход").withIcon(R.drawable.ic_logout);
-
+        Bitmap bitmapFactory = BitmapFactory.decodeResource(getResources(),R.drawable.sytnik);
+        bitmapFactory = Bitmap.createScaledBitmap(bitmapFactory, 64, 64, false);
 //create the drawer and remember the `Drawer` result object
         AccountHeaderBuilder accountHeader = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.iniy_gradient)
                 .addProfiles(new ProfileDrawerItem()
                         .withEmail("test@mail.com")
+                        .withIcon(bitmapFactory)
                         .withName("Yana Sytnyk"));
         Drawer result = new DrawerBuilder()
                 .withActivity(this)
