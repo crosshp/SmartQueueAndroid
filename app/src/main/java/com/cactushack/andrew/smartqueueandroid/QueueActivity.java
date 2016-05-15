@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,8 @@ public class QueueActivity extends AppCompatActivity {
                 activity.startActivity(intent);
             }
         });
+        TextView textView = (TextView) findViewById(R.id.queueNameHeader);
+        textView.setText(getIntent().getStringExtra("name"));
         List<UserCard> userCards = new ArrayList<>();
 
         for (int i = 0; i < 8; i++) {
